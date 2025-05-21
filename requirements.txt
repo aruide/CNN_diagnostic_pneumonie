@@ -1,0 +1,7 @@
+numpy
+matplotlib
+tensorflow==2.19.0
+opencv-python
+seaborn
+scikit-learn
+mlflow
