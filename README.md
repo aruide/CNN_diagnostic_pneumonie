@@ -85,13 +85,13 @@ CNN_diagnostic_pneumonie/
 ├── CheXNet_diagnostic_pneumonie.ipynb
 ├── EfficientNetB0_diagnostic_pneumonie.ipynb
 ├── MobileNetV3Large_diagnostic_pneumonie.ipynb
-├── data/                    # Données d'entraînement/test
-├── img/                     # Résultats visuels
+├── data/                    # Données train/test/val
+├── img/                    
 ├── requirements.txt         # Dépendances
 └── README.md
 ```
 
-## ⚙️ Installation
+## ⚙️ Installation (environnement WSL Ubuntu)
 
 1. Cloner le dépôt :
 ```bash
@@ -100,8 +100,8 @@ cd CNN_diagnostic_pneumonie
 ```
 2. Créer un environnement virtuel et l’activer :
 ```bash
-python -m venv env
-source env/bin/activate  # (Windows : env\Scripts\activate)
+python -m venv .venv
+source .venv/bin/activate  # (Windows : env\Scripts\activate)
 ```
 
 3. Installer les dépendances :
@@ -109,36 +109,9 @@ source env/bin/activate  # (Windows : env\Scripts\activate)
 pip install -r requirements.txt
 ```
 
-4. Installer les dépendances Nvidia (optionnel) :
-**cette partie n'est pas necessaire mais fortement recomander si vous avez une carte graphique Nvida compatible avec CUDA12.2 et CUDNN 8.9**
-
-**cette partie marche avec un WSL ubuntu**
-
-pour CUDA: suivre les étape du site:
-> https://developer.nvidia.com/cuda-12-2-0-download-archive
-
-pour CUDNN télécharger l'archive sur ce site (avoir un compte NVIDIA developpeur):
->https://developer.nvidia.com/rdp/cudnn-archive
-
-ensuite suivre ces étape:
-```bash
-#decompresser l'archive
-tar -xzvf cudnn-linux-x86_64-8.9.*.tgz
-#compier le contenu des fichier
-sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
-sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
-sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
-#creer la variable d'environnement
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-#mettre à jour
-source ~/.bashrc
-```
-
-il y à des les codes une partie pour tester si votre carte graphique est reconnu ou non
-
 ## 🚀 Utilisation
 
-Structure attendue :
+Structure attendue pour les données :
 ```bash
 data/
 ├── train/
@@ -154,7 +127,7 @@ data/
 
 Lance l’un des notebooks selon l’architecture souhaitée :
 - `CheXNet_diagnostic_pneumonie.ipynb` ⚠️ **utilisation du GPU fortement conseillé**
-- `EfficientNetB0_diagnostic_pneumonie.ipynb`
+- `EfficientNetB0_diagnostic_pneumonie.ipynb` ⚠️ **utilisation du GPU fortement conseillé**
 - `MobileNetV3Large_diagnostic_pneumonie.ipynb`
 
 Suivre les instructions dans les cellules Markdown.
