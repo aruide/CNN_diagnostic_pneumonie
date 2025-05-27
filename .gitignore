@@ -175,4 +175,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+data/*
 corrupt_images/*
+weights/*
+img/*
