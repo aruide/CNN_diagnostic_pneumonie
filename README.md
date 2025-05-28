@@ -90,6 +90,7 @@ CNN_diagnostic_pneumonie/
 ├── EfficientNetB0_diagnostic_pneumonie.ipynb
 ├── MobileNetV3Large_diagnostic_pneumonie.ipynb
 ├── data/                    # Données train/test/val
+├── cache/                   # Données en cache
 ├── corrupt_images/          # dossier créer lors de la verif des images corrompue
 ├── img/
 ├── weights/                 # contient le poids du modele chexnet (mais aussi contient les poids sauvegardé des test de modele)
@@ -129,6 +130,13 @@ source .venv/bin/activate  # (Windows : env\Scripts\activate)
 pip install -r requirements.txt
 ```
 
+⚠️ pour utiliser le GPU: décommenter ces ligne de code dans le `requirements.txt`
+```bash
+#nvidia-cudnn-cu12==8.9.2.26
+#nvidia-cublas-cu12==12.1.3.1
+#nvidia-cuda-runtime-cu12==12.2.140
+```
+
 ## 🚀 Utilisation
 
 Structure attendue pour les données :
@@ -149,6 +157,9 @@ Lance l’un des notebooks selon l’architecture souhaitée :
 - `CheXNet_diagnostic_pneumonie.ipynb` ⚠️ **utilisation du GPU fortement conseillé**
 - `EfficientNetB0_diagnostic_pneumonie.ipynb` ⚠️ **utilisation du GPU fortement conseillé**
 - `MobileNetV3Large_diagnostic_pneumonie.ipynb`
+
+ℹ️ pour plus de rapiditer avec les 2 premier modele, lancer le `MobileNetV3Large_diagnostic_pneumonie.ipynb`\
+afin de mettre les données des test et de val en cache.
 
 Suivre les instructions dans les cellules Markdown.
 

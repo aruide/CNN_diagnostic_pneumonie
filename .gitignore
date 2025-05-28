@@ -179,3 +179,4 @@ data/*
 corrupt_images/*
 weights/*
 img/*
+cache/*
