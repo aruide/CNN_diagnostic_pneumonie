@@ -199,6 +199,36 @@ MLflow permet de :
    ```
 Cela ouvre une interface web à l'adresse : http://localhost:5000
 
+## 📊 Comparaison des modèles
+
+Trois modèles CNN ont été entraînés et évalués sur la détection de la pneumonie à partir de radiographies thoraciques.
+
+### 🧪 Résultats sur le jeu de test
+
+| Modèle           | Test Accuracy (`final_test_accuracy`) | Validation Accuracy (`unfrozen_val_accuracy`) | Remarque principale                  |
+|------------------|----------------------------------------|-----------------------------------------------|---------------------------------------|
+| **EfficientNetB0** | ✅ **90.2%**                             | 93.8%                                        | Meilleure généralisation sur données jamais vues |
+| **MobileNetV3Large** | 89.1%                                 | ✅ **100%**                                    | Surapprentissage possible sur la validation |
+| **CheXNet**         | ❌ 59.5%                               | 31.3%                                        | Sous-performance nette sur tous les ensembles |
+
+> Les scores sont issus de `model.evaluate(test_dataset)` pour l'exactitude finale, et `unfrozen_val_accuracy` pour la dernière époque de validation.
+
+---
+
+### 🏆 Modèle retenu : **EfficientNetB0**
+
+Malgré une `unfrozen_accuracy` légèrement inférieure à MobileNet, **EfficientNetB0 montre la meilleure performance sur le jeu de test**, ce qui en fait le **modèle le plus robuste et le plus fiable** pour ce cas d’usage.
+
+- Il généralise mieux.
+- Il reste performant sans overfitting apparent.
+- Il équilibre très bien taille, vitesse et précision.
+
+---
+
+### 🖼️ Visualisation comparative
+
+![Comparaison des modèles - MLflow](img/courbe_comparaison.png)
+
 ## 👤 Auteur
 @aruide
 
