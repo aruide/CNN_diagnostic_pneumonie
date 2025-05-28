@@ -130,7 +130,7 @@ source .venv/bin/activate  # (Windows : env\Scripts\activate)
 pip install -r requirements.txt
 ```
 
-⚠️ pour utiliser le GPU: décommenter ces ligne de code dans le `requirements.txt`
+⚠️ pour utiliser le GPU: décommenter ces lignes de code dans le `requirements.txt`
 ```bash
 #nvidia-cudnn-cu12==8.9.2.26
 #nvidia-cublas-cu12==12.1.3.1
@@ -158,10 +158,10 @@ Lance l’un des notebooks selon l’architecture souhaitée :
 - `EfficientNetB0_diagnostic_pneumonie.ipynb` ⚠️ **utilisation du GPU fortement conseillé**
 - `MobileNetV3Large_diagnostic_pneumonie.ipynb`
 
-ℹ️ pour plus de rapiditer avec les 2 premier modele, lancer le `MobileNetV3Large_diagnostic_pneumonie.ipynb`\
-afin de mettre les données des test et de val en cache.
+suivez les instructions dans les cellules Markdown.
 
-Suivre les instructions dans les cellules Markdown.
+ℹ️ Pour accélérer l'exécution des deux premiers modèles, lancez d'abord le notebook `MobileNetV3Large_diagnostic_pneumonie.ipynb`\
+afin de mettre en cache les données de validation et de test.
 
 ## 📊 Résultats attendus
 Les modèles sont évalués avec les métriques suivantes :
