@@ -1,5 +1,7 @@
 # 🧬 Diagnostic de la Pneumonie via CNN
 
+![preview](preview.png)
+
 ## 🏷️ Tags
 
 ![Deep Learning](https://img.shields.io/badge/deep--learning-orange?style=flat-square)
